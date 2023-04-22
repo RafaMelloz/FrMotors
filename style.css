@@ -1,0 +1,375 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b4b4b47e;
+    border-radius: 5px;
+}
+
+body{
+    background-color: blueviolet;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear{
+    clear: both;
+}
+
+.top-nav{
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    height: 100px;
+   
+    border-bottom: 1px solid #d332157e ;
+    }
+
+.top-nav img {
+    width: 120px;
+    padding: -10px;
+}
+
+.nav{
+    --bs-nav-link-color: color: white !important;
+    --bs-nav-link-hover-color: color: white !important;
+}
+
+.nav-botoes img{
+    width: 20px;
+    margin-bottom: 5px;
+    margin-right: 8px;
+
+}
+
+
+.nav-botoes{
+    float: right;
+    padding-top: 39px;
+}
+
+.nav-botoes spam {
+   color: rgba(255, 255, 255, 0.603);
+    font-size: 14px;
+}
+
+
+
+
+
+#whatsapp{
+    background-color:#33a53e ;
+    text-decoration: none;
+    padding:8px 30px;
+    color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+#telefone {
+    background-color: #d33215;
+    text-decoration: none;
+    padding: 8px 30px;
+    color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+#btnModelo {
+    background-color: #d33215;
+    text-decoration: none;
+    padding: 8px 30px;
+    color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    margin:  auto;
+
+}
+
+
+#img-car{
+filter: grayscale(96%)  blur(10px) saturate(1000%);
+    -webkit-filter: grayscale(96%)  blur(0px) saturate(1000%);
+    -moz-filter: grayscale(96%)  blur(2px) saturate(1000%);
+}
+
+
+.card{
+    --bs-card-bg: #d3321549!important;
+}
+
+.card-body{
+    background-color:rgb(58, 58, 58);;
+    color: white!important;
+    border-bottom-left-radius:10px!important;
+    border-bottom-right-radius: 10px !important;
+}
+
+.card-title{
+    text-align: center!important;
+}
+
+
+.btn-primary{
+    background-color:#d33215!important;
+    border-radius: 20px!important;
+    border: none!important;
+    font-weight: 600!important;
+}
+
+.card-body h5 {
+   text-align: center;
+}
+
+
+.card-body ul{
+   list-style: none;
+}
+
+.card-body ul li::before {
+    content: "\2022";
+    color: #d33215;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+
+
+
+
+
+
+
+
+.carousel{
+    position: relative;
+    width: 65%!important;
+    border: 2px solid #d332157e!important;
+    border-radius: 10px!important;
+       
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.formulario{
+    width: 35%;
+margin-left: 20px;
+}
+
+#fmlProposta{
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+    border-radius: 10px;
+    border:1px solid #d3321549 ;
+    padding: 15px;
+}
+
+.form-control{
+    margin: 10px 0px;
+}
+
+
+footer{
+    width: 100%;
+    height: 40px;
+    border-top:2px solid #d332157e ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:770px) {
+   .desapareceLink{
+        display:none;
+    } 
+
+    .nav-botoes img {
+        margin-right: 0px;
+    }   
+
+    #whatsapp {
+        padding: 8px 15px;
+    }
+    
+    #telefone {
+        padding: 8px 12px;
+    }
+
+    #flex{
+        flex-direction:column;
+    }
+
+    .carousel {
+        width: 100%!important;
+    }
+
+
+    .formulario {
+        width: 100%;
+        margin-top: 35px;
+        margin-left: 0px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.projetos {
+    background-color: rgb(175, 173, 173);
+    width: 300px;
+    height: 180px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 20px;
+    overflow: hidden;
+    transition-timing-function: ease-out;
+        transition: 1.5s;
+}
+
+.projetos:hover{
+    background-image: url('images/gif-marvel-53.gif');
+    width: 300px;
+    height: 180px;
+    background-size: 300px 180px ;
+
+
+}
+
+
+
+
+.faixa {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.534);
+    border-top: 1px solid rgba(255, 255, 255, 0.445);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.445);
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+
+}
+
+.faixa a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+    transition-timing-function: ease-out;
+    transition: 1.5s;
+}
+
+
+
+<div class="projetos">
+    <div class="faixa">
+        <a href="">Pixar!</a>
+    </div>
+</div>
+*/
+
