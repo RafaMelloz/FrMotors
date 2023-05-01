@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
 
     <style>
         body {
@@ -51,15 +53,18 @@
             <div class="formulario">
                 <h2>V6 Comfortline</h2>
                 <h4>R$100.000,00</h4>
-                <form id="fmlProposta">
+                <form id="fmlProposta" action="https://formsubmit.co/rafaelmeloalvessouza@gmail.com" method="POST">
                     <h5>Nos envie sua proposta!</h6>
-                        <input class="form-control" type="text" placeholder="Insira seu nome">
-                        <input class="form-control" type="text" placeholder="Insira seu email">
-                        <input class="form-control" type="text" placeholder="Insira seu telefone">
-                        <textarea class="form-control" id="" rows="5" style="resize: none;" placeholder="Ola, gostaria de sabre sobre..."></textarea>
+                        <input class="form-control" name="txtNome" id="txtNome" type="text" placeholder="Insira seu nome" onblur="validaForm()">
+                        <input class="form-control" name="txtEmail" id="txtEmail" type="Email" placeholder="Insira seu email" onblur="validaForm()">
+                        <input class="form-control" name="txtTel" id="txtTel" type="text" placeholder="Insira seu telefone" onblur="validaForm()">
+                        <textarea class="form-control" name="txtComent" id="txtComent" rows="5" style="resize: none;" placeholder="Ola, gostaria de saber sobre..." onblur="validaForm()"></textarea>
                         <div id='recaptcha' class="g-recaptcha" data-sitekey="CHAVE DO SITE" data-callback="sendForm" data-size="invisible"></div>
                         <div class="d-grid gap-1">
-                            <input type="submit" class="btn btn-primary" value="Enviar">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="<?php echo INCLUDE_PATH ?>pages/agradecimento.php">
+                            <input type="submit" id="envia" class="btn btn-primary" value="Enviar" disabled>
+
                         </div>
                 </form>
             </div>
@@ -125,11 +130,62 @@
 
 
 
+    <script>
+        $(document).ready(function() {
+            $('#txtTel').inputmask('(99)9999-9999');
+        });
+
+        //validação email
+        var inputEmail = $('#txtEmail');
+
+        inputEmail.on('blur', function() {
+
+            var email = inputEmail.val();
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Por favor, insira um endereço de email válido.');
+                inputEmail.val(''); // Limpa o campo de entrada
+            }
+        });
+        ////////////////////////////////
+
+        //mascara só para numero
+        var input = $('#txtNome');
+
+        input.on('keypress', function(event) {
+            var charCode = event.which;
+
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+                return true;
+            } else {
+                event.preventDefault();
+            }
+        });
+        ///////////////////////////////
+
+
+        function validaForm() {
+            var valNome = document.getElementById('txtNome').value;
+            var valEmail = document.getElementById('txtEmail').value
+            var valTel = document.getElementById('txtTel').value;
+            var valComentario = document.getElementById('txtComent').value;
+            var BotaoEnvio = document.getElementById("envia");
+
+
+            if (valNome != '' && valEmail != '' && valTel != '' && valComentario != '') {
+                BotaoEnvio.disabled = false;
+            } else {
+                BotaoEnvio.disabled = true;
+
+            }
+        }
+    </script>
+
 
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-</body>
+
 
 </html>
