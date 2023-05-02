@@ -16,8 +16,9 @@ if (isset($_GET['loggout'])) {
     <link rel="stylesheet" type="text/css" href="../css/stylePainel.css">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/sidebars.js"></script>
+    <script src="sidebars.js"></script>
     <link href="../css/sidebars.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Painel</title>
 </head>
 
@@ -56,7 +57,7 @@ if (isset($_GET['loggout'])) {
                 </li>
 
                 <li>
-                    <a href="#" class="nav-link py-3 border-bottom" title="Cadastro de veiculos" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionarVeiculo" class="nav-link py-3 border-bottom" title="Cadastro de veiculos" data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg class="bi" width="24" height="24" role="img" aria-label="Cadastro de veiculos">
                             <use xlink:href="#speedometer2" />
                         </svg>
@@ -81,9 +82,9 @@ if (isset($_GET['loggout'])) {
 
 
             <div class="container">
-                    <div class="content">
-                        <?php Painel::carregarPagina(); ?>
-                    </div>
+                <div class="content">
+                    <?php Painel::carregarPagina(); ?>
+                </div>
             </div>
 
         </section>
