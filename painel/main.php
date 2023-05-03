@@ -19,6 +19,11 @@ if (isset($_GET['loggout'])) {
     <script src="sidebars.js"></script>
     <link href="../css/sidebars.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+
+
+
     <title>Painel</title>
 </head>
 
