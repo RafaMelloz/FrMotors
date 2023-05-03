@@ -20,8 +20,8 @@
                 } else {
                     header('Location' . INCLUDE_PATH_PAINEL);
                 }
-            // } else {
-            //     include('../painel/pages/home.php');
+             } else {
+              include('../painel/pages/home.php');
             }
         }
 

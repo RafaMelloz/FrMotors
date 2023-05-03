@@ -54,7 +54,7 @@ if (isset($_GET['loggout'])) {
 
             <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                 <li>
-                    <a href="#" class="nav-link py-3 border-bottom" aria-current="page" title="Inicio" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>home" class="nav-link py-3 border-bottom" aria-current="page" title="Inicio" data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg class="bi" width="24" height="24" role="img" aria-label="Inicio">
                             <use xlink:href="#home" />
                         </svg>
