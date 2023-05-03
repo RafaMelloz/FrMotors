@@ -43,17 +43,17 @@
     ?>
     <div class="col-md-4">
         <label>Usuário</label>
-        <input class="form-control" type="text" name="user" id="user">
+        <input class="form-control" type="text" name="user" id="user" onblur="validaForm()">
     </div>
 
     <div class="col-md-4">
         <label>Senha</label>
-        <input class="form-control" type="password" name="senha" id="senha">
+        <input class="form-control" type="password" name="senha" id="senha" onblur="validaForm()">
     </div>
 
     <div class="col-md-4">
         <label style="opacity:0">Senha</label>
-        <input type="submit" onclick="validaForm()" class="botaoCadastro" id="cadastraUser" name="cadastraUser" value="Cadastrar">
+        <input type="submit" disabled class="botaoCadastro" id="cadastraUser" name="cadastraUser" value="Cadastrar">
     </div>
 </form>
 <br><br>
@@ -95,13 +95,9 @@ mysqli_close($conn); // Fechamento da conexão
         var botaoLogin = document.getElementById("cadastraUser")
 
         if (valUser != '' && valSenha != '') {
-
+            botaoLogin.disabled = false;
         } else {
-            alert("Preencha os campos!")
-            return false;
+            botaoLogin.disabled = true;
         }
     }
-
-
-
 </script>
