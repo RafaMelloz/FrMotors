@@ -1,4 +1,12 @@
-<?php include('../topmenu.php') ?>
+<?php
+include('../topmenu.php');
+
+$id = $_GET['id']; // Recupera o valor do ID da URL
+$conn = mysqli_connect("Localhost", "root", '150605R$fa', "frmotors");
+$resultado = mysqli_query($conn, "SELECT * FROM veiculos WHERE ID = $id");
+$row = mysqli_fetch_assoc($resultado);
+mysqli_close($conn);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,36 +31,42 @@
         <div style="height: 5px; width:10%; background-color: #d332157e; border-radius: 60px;"></div>
         <br>
         <div id="flex" style="display: flex;">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+            <div id="Indicadores" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../images/carroexenplo.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <img src="../painel/uploads/<?php echo $row["fotoUm"] ?>" class="d-block w-100" style="height: 100%!important;">
                     </div>
-                    <div class="carousel-item">
-                        <img src="../images/carroexenplo.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/carroexenplo.jpg" class="d-block w-100" alt="...">
-                    </div>
+                    
+                    <?php if (isset($row["fotoDois"]) && $row["fotoDois"] != "") { ?>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="../painel/uploads/<?php echo $row["fotoDois"] ?>" class="d-block w-100" style="height: 100%!important;">
+                        </div>
+                    <?php } ?>
+
+                    <?php if (isset($row["fotoTres"]) && $row["fotoTres"] != "") { ?>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="../painel/uploads/<?php echo $row["fotoTres"] ?>" class="d-block w-100" style="height: 100%!important;">
+                        </div>
+                    <?php } ?>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#Indicadores" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#Indicadores" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden">Proximo</span>
                 </button>
             </div>
 
             <div class="formulario">
-                <h2>V6 Comfortline</h2>
-                <h4>R$100.000,00</h4>
+                <h2><?php echo $row["nomeVeiculo"] ?></h2>
+                <h4><?php echo $row["valorVeiculo"] ?></h4>
                 <form id="fmlProposta" action="https://formsubmit.co/rafaelmeloalvessouza@gmail.com" method="POST">
                     <h5>Nos envie sua proposta!</h6>
                         <input class="form-control" name="txtNome" id="txtNome" type="text" placeholder="Insira seu nome" onblur="validaForm()">
@@ -68,7 +82,6 @@
                         </div>
                 </form>
             </div>
-
         </div>
 
 
@@ -83,46 +96,26 @@
             <h3>Especificações:</h3>
             <div class="col-md-3">
                 <ul>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
+                    <li><?php echo $row["EspeciUm"] ?></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
+                    <li><?php echo $row["EspeciDois"] ?></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
+                    <li><?php echo $row["EspeciTres"] ?></li>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
+                    <li><?php echo $row["EspeciQuatro"] ?></li>
                 </ul>
             </div>
         </div>
     </div>
-
-
-
-
     <br>
     <footer>
 
