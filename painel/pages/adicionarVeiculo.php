@@ -39,34 +39,34 @@
         $imagem2 = Painel::uploadFile($imagem2);
         $imagem3 = Painel::uploadFile($imagem3);
         $veiculo->cadastrarVeiculo($nomev, $preco, $cambio, $km, $combustivel, $imagem1, $imagem2, $imagem3, $espec1, $espec2, $espec3, $espec4);
-        echo '<script>Veículo inserido com sucesso!</script>';
+        echo '<script>alert("Veículo inserido com sucesso!</script>")';
     }
     ?>
 
 
     <div class="row">
         <div class="col-md-4">
-            <label>Nome do veículo:</label>
+            <label>Nome do veículo:</label><span style="color:red"> *</span>
             <input class="form-control" type="text" name="txtNomeVeiculo" id="txtNomeVeiculo" onblur="validarForm()">
         </div>
 
         <div class="col-md-2">
-            <label>Preço:</label>
+            <label>Preço:</label><span style="color:red"> *</span>
             <input class="form-control" type="text" name="txtPreco" id="txtPreco" onblur="validarForm()">
         </div>
 
         <div class="col-md-2">
-            <label>Cambio:</label>
+            <label>Cambio:</label><span style="color:red"> *</span>
             <input class="form-control" type="text" name="txtCambio" id="txtCambio" onblur="validarForm()">
         </div>
 
         <div class="col-md-2">
-            <label>Quilometragem:</label>
+            <label>Quilometragem:</label><span style="color:red"> *</span>
             <input class="form-control" type="text" name="txtKm" id="txtKm" onblur="validarForm()">
         </div>
 
         <div class="col-md-2">
-            <label>Combustivel:</label>
+            <label>Combustivel:</label><span style="color:red"> *</span>
             <input class="form-control" type="text" name="txtCombs" id="txtCombs" onblur="validarForm()">
         </div>
     </div>
@@ -75,7 +75,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <label>Foto(1):</label>
+            <label>Foto(1):</label><span style="color:red"> *</span>
             <input class="form-control" type="file" name="fotoUm" id="fotoUm" onblur="validarForm()">
         </div>
 
@@ -156,4 +156,13 @@
             botaoCadastro.disabled = true;
         }
     }
+
+
+    const inputNome = document.getElementById("txtNomeVeiculo");
+
+    inputNome.addEventListener("keyup", function(event) {
+        let str = inputNome.value;
+        str = str.charAt(0).toUpperCase() + str.slice(1);
+        inputNome.value = str;
+    });
 </script>

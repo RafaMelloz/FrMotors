@@ -69,10 +69,10 @@ mysqli_close($conn);
                 <h4><?php echo $row["valorVeiculo"] ?></h4>
                 <form id="fmlProposta" action="https://formsubmit.co/rafaelmeloalvessouza@gmail.com" method="POST">
                     <h5>Nos envie sua proposta!</h6>
-                        <input class="form-control" name="txtNome" id="txtNome" type="text" placeholder="Insira seu nome" onblur="validaForm()">
-                        <input class="form-control" name="txtEmail" id="txtEmail" type="Email" placeholder="Insira seu email" onblur="validaForm()">
-                        <input class="form-control" name="txtTel" id="txtTel" type="text" placeholder="Insira seu telefone" onblur="validaForm()">
-                        <textarea class="form-control" name="txtComent" id="txtComent" rows="5" style="resize: none;" placeholder="Ola, gostaria de saber sobre..." onblur="validaForm()"></textarea>
+                        <input class="form-control" name="txtNome" id="txtNome" type="text" placeholder="Insira seu nome *" onblur="validaForm()">
+                        <input class="form-control" name="txtEmail" id="txtEmail" type="Email" placeholder="Insira seu email *" onblur="validaForm()">
+                        <input class="form-control" name="txtTel" id="txtTel" type="text" placeholder="Insira seu telefone *" onblur="validaForm()">
+                        <textarea class="form-control" name="txtComent" id="txtComent" rows="5" style="resize: none;" placeholder="Ola, gostaria de saber sobre... *" onblur="validaForm()"></textarea>
                         <div id='recaptcha' class="g-recaptcha" data-sitekey="CHAVE DO SITE" data-callback="sendForm" data-size="invisible"></div>
                         <div class="d-grid gap-1">
                             <input type="hidden" name="_captcha" value="false">

@@ -42,12 +42,12 @@
 
     ?>
     <div class="col-md-4">
-        <label>Usuário</label>
+        <label>Usuário</label><span style="color:red"> *</span>
         <input class="form-control" type="text" name="user" id="user" onblur="validaForm()">
     </div>
 
     <div class="col-md-4">
-        <label>Senha</label>
+        <label>Senha</label><span style="color:red"> *</span>
         <input class="form-control" type="password" name="senha" id="senha" onblur="validaForm()">
     </div>
 
