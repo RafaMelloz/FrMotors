@@ -34,14 +34,24 @@ mysqli_close($conn);
             <div id="Indicadores" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <?php if (isset($row["fotoDois"]) && $row["fotoDois"] != "") { ?>
+                        <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <?php } ?>
+                    <?php if (isset($row["fotoTres"]) && $row["fotoTres"] != "") { ?>
+                        <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <?php } ?>
+                    <?php if (isset($row["fotoQuatro"]) && $row["fotoQuatro"] != "") { ?>
+                        <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <?php } ?>
+                    <?php if (isset($row["fotoCinco"]) && $row["fotoCinco"] != "") { ?>
+                        <button type="button" data-bs-target="#Indicadores" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <?php } ?>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
                         <img src="../painel/uploads/<?php echo $row["fotoUm"] ?>" class="d-block w-100" style="height: 100%!important;">
                     </div>
-                    
+
                     <?php if (isset($row["fotoDois"]) && $row["fotoDois"] != "") { ?>
                         <div class="carousel-item" data-bs-interval="5000">
                             <img src="../painel/uploads/<?php echo $row["fotoDois"] ?>" class="d-block w-100" style="height: 100%!important;">
@@ -51,6 +61,18 @@ mysqli_close($conn);
                     <?php if (isset($row["fotoTres"]) && $row["fotoTres"] != "") { ?>
                         <div class="carousel-item" data-bs-interval="5000">
                             <img src="../painel/uploads/<?php echo $row["fotoTres"] ?>" class="d-block w-100" style="height: 100%!important;">
+                        </div>
+                    <?php } ?>
+
+                    <?php if (isset($row["fotoQuatro"]) && $row["fotoQuatro"] != "") { ?>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="../painel/uploads/<?php echo $row["fotoQuatro"] ?>" class="d-block w-100" style="height: 100%!important;">
+                        </div>
+                    <?php } ?>
+
+                    <?php if (isset($row["fotoCinco"]) && $row["fotoCinco"] != "") { ?>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="../painel/uploads/<?php echo $row["fotoCinco"] ?>" class="d-block w-100" style="height: 100%!important;">
                         </div>
                     <?php } ?>
                 </div>
@@ -67,7 +89,7 @@ mysqli_close($conn);
             <div class="formulario">
                 <h2><?php echo $row["nomeVeiculo"] ?></h2>
                 <h4><?php echo $row["valorVeiculo"] ?></h4>
-                <form id="fmlProposta" action="https://formsubmit.co/rafaelmeloalvessouza@gmail.com" method="POST">
+                <form id="fmlProposta" action="https://formsubmit.co/frmotosmultimarcas@gmail.com" method="POST">
                     <h5>Nos envie sua proposta!</h6>
                         <input class="form-control" name="txtNome" id="txtNome" type="text" placeholder="Insira seu nome *" onblur="validaForm()">
                         <input class="form-control" name="txtEmail" id="txtEmail" type="Email" placeholder="Insira seu email *" onblur="validaForm()">
@@ -96,22 +118,54 @@ mysqli_close($conn);
             <h3>Especificações:</h3>
             <div class="col-md-3">
                 <ul>
-                    <li><?php echo $row["EspeciUm"] ?></li>
+                    <?php if (isset($row["EspeciUm"]) && $row["EspeciUm"] != "") { ?>
+                        <li><?php echo $row["EspeciUm"] ?></li>
+                    <?php } ?>
+
+                    <?php if (isset($row["EspeciCinco"]) && $row["EspeciCinco"] != "") { ?>
+                        <li><?php echo $row["EspeciCinco"] ?></li>
+                    <?php } ?>
+
+                    <?php if (isset($row["EspeciNove"]) && $row["EspeciNove"] != "") { ?>
+                        <li><?php echo $row["EspeciNove"] ?></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li><?php echo $row["EspeciDois"] ?></li>
+                    <?php if (isset($row["EspeciDois"]) && $row["EspeciDois"] != "") { ?>
+                        <li><?php echo $row["EspeciDois"] ?></li>
+                    <?php } ?>
+
+                    <?php if (isset($row["EspeciSeis"]) && $row["EspeciSeis"] != "") { ?>
+                        <li><?php echo $row["EspeciSeis"] ?></li>
+                    <?php } ?>
+
+                    <?php if (isset($row["EspeciDez"]) && $row["EspeciDez"] != "") { ?>
+                        <li><?php echo $row["EspeciDez"] ?></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li><?php echo $row["EspeciTres"] ?></li>
+                    <?php if (isset($row["EspeciTres"]) && $row["EspeciTres"] != "") { ?>
+                        <li><?php echo $row["EspeciTres"] ?></li>
+                    <?php } ?>
+
+                    <?php if (isset($row["EspeciSete"]) && $row["EspeciSete"] != "") { ?>
+                        <li><?php echo $row["EspeciSete"] ?></li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-md-3">
                 <ul>
-                    <li><?php echo $row["EspeciQuatro"] ?></li>
+                    <?php if (isset($row["EspeciQuatro"]) && $row["EspeciQuatro"] != "") { ?>
+                        <li><?php echo $row["EspeciQuatro"] ?></li>
+                    <?php } ?>
+
+                    <?php if (isset($row["EspeciOito"]) && $row["EspeciOito"] != "") { ?>
+                        <li><?php echo $row["EspeciOito"] ?></li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>

@@ -24,7 +24,9 @@
             <div class="nav-botoes">
                 <spam>Fale conosco:</spam>
                 <a href="#" id="telefone"> <img src="<?php echo INCLUDE_PATH ?>/images/telefone.png"><span class="desapareceLink">TELEFONE</span> </a>
-                <a href="#" id="whatsapp"><img src="<?php echo INCLUDE_PATH ?>/images/whatsapp.png" alt="..."><span class="desapareceLink">WHATSAPP</span></a>
+                <a href="#" id="whatsapp"><img src="<?php echo INCLUDE_PATH ?>/images/whatsapp.png" alt="..." style="margin-right: 0px;"></a>
+                <a href="https://www.facebook.com/profile.php?id=100090599830251" id="facebook"><img src="<?php echo INCLUDE_PATH ?>/images/facebook.png" alt="..." style="margin-right: 0px;"></a>
+                <a href="https://www.instagram.com/fr.motos.multimarcas/" id="insta"><img src="<?php echo INCLUDE_PATH ?>/images/instagram.png" alt="..." style="margin-right: 0px;"></a>
             </div>
         </div>
     </div>
@@ -38,9 +40,6 @@
                 <ul class="nav justify-content-center" style="margin: auto!important;">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="<?php echo INCLUDE_PATH ?>index.php">INICIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ESTOQUE</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">QUEM SOMOS</a>
