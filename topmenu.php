@@ -20,9 +20,9 @@
 <body>
     <div class="top-nav">
         <div class="container">
-            <img src="<?php echo INCLUDE_PATH ?>/images/FRMotors.png">
+            <img id="logo" src="<?php echo INCLUDE_PATH ?>/images/FRMotors.png">
             <div class="nav-botoes">
-                <spam>Fale conosco:</spam>
+                <spam class="desapareceLink">Fale conosco:</spam>
                 <a href="#" id="telefone"> <img src="<?php echo INCLUDE_PATH ?>/images/telefone.png"><span class="desapareceLink">TELEFONE</span> </a>
                 <a href="#" id="whatsapp"><img src="<?php echo INCLUDE_PATH ?>/images/whatsapp.png" alt="..." style="margin-right: 0px;"></a>
                 <a href="https://www.facebook.com/profile.php?id=100090599830251" id="facebook"><img src="<?php echo INCLUDE_PATH ?>/images/facebook.png" alt="..." style="margin-right: 0px;"></a>

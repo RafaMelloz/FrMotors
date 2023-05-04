@@ -26,6 +26,7 @@
             justify-content: center;
         }
     </style>
+    <title>Obrigado!</title>
 </head>
 
 <body>

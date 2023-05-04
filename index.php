@@ -30,9 +30,9 @@
                         // Loop pelos resultados
                         while ($row = mysqli_fetch_assoc($resultado)) {
 
-                            echo '<div class="col-md-3" style="margin-bottom: 20px;">
+                            echo '<div class="col-md-3" style="margin-bottom: 20px; min-width: 260px;">
                                     <div class="card h-100">
-                                        <img src="painel/uploads/'.$row["fotoUm"]. '" class="card-img-top" style="min-height: 172.66!important;" alt="...">
+                                        <img src="painel/uploads/'.$row["fotoUm"]. '" class="card-img-top" style="min-height: 172.66!important; " alt="...">
                                         <div class="card-body">
 
                                             <h5 class="card-title">'. $row["nomeVeiculo"] . '</h5>

@@ -189,7 +189,7 @@ filter: grayscale(96%)  blur(10px) saturate(1000%);
 
 .formulario{
     width: 35%;
-margin-left: 20px;
+    margin-left: 20px;
 }
 
 #fmlProposta{
@@ -254,11 +254,11 @@ footer{
     }   
 
     #whatsapp {
-        padding: 8px 15px;
+        padding: 8px 10px;
     }
     
     #telefone {
-        padding: 8px 12px;
+        padding: 8px 7px;
     }
 
     #flex{
@@ -276,6 +276,13 @@ footer{
         margin-left: 0px;
     }
 
+}
+
+@media screen and (max-width:411px) {
+    #logo{
+        width: 85px;
+        margin-top:20px
+    }
 }
 
 
